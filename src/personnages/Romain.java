@@ -18,7 +18,7 @@ public class Romain {
 	}
 	
 	private String prendreParole() {
-		return "Le romain" + nom + ":";
+		return "Le romain " + nom + ":";
 	}
 	
 	public void recevoirCoup(int forceCoup) {
@@ -27,7 +27,7 @@ public class Romain {
 			parler("Aïe");
 			
 		} else {
-			parler("J'abandonne...");
+			parler("J'abandonne..."); 
 		}
 		
 	}
@@ -37,7 +37,12 @@ public class Romain {
 		return "Romain [nom=" + nom + ", force=" + force + "]";
 	}
 	
-	public static void main(String[] args) {
-		Brutus 
+	public static void main(String[] arg) {
+		Romain mercurius;
+		mercurius = new Romain("Mercurius", 2);
+		mercurius.parler("me frappe pas!");
+		mercurius.recevoirCoup(3);
+		
 	}
+	
 }

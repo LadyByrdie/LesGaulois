@@ -22,7 +22,7 @@ public class Gaulois {
 	}
 	
 	public void frapper(Romain romain) {
-		System.out.println(prendreParole()+ "envoie un grand coup dans la mâchoire de" + romain.getNom());
+		System.out.println(prendreParole()+ "envoie un grand coup dans la mâchoire de " + romain.getNom());
 		romain.recevoirCoup(force / 3);
 	}
 
@@ -35,11 +35,16 @@ public class Gaulois {
 			Gaulois asterix;
 			asterix= new Gaulois("Astérix",8);
 			//System.out.println(asterix);
-			asterix.parler("Bonjour, Obelix!");
+			
+			Romain brutus;
+			brutus = new Romain("Brutus",4);
+			//System.out.println(brutus);
+
+			asterix.parler("Regard la bas!");
 			asterix.prendreParole();
-			asterix.frapper(null);
-}
-	
+			asterix.frapper(brutus);
+			
+	}
 
 
 }
