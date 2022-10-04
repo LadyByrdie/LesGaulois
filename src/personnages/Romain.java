@@ -1,14 +1,9 @@
 package personnages;
 
-public class Romain{
+public class Romain {
 	private String nom;
 	private int force;
 	
-	public Romain(String nom, int force){
-		
-		
-	}
-
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
@@ -32,7 +27,7 @@ public class Romain{
 			parler("Aïe");
 			
 		} else {
-			parler("J'abandonne...")
+			parler("J'abandonne...");
 		}
 		
 	}
