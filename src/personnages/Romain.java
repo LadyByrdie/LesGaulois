@@ -31,4 +31,13 @@ public class Romain {
 		}
 		
 	}
+
+	@Override
+	public String toString() {
+		return "Romain [nom=" + nom + ", force=" + force + "]";
+	}
+	
+	public static void main(String[] args) {
+		Brutus 
+	}
 }
