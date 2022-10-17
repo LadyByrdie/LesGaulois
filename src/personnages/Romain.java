@@ -35,6 +35,13 @@ public class Romain {
 			parler("J'abandonne..."); 
 		}
 		
+		public void afficherEquipement() {
+			System.out.println("Les équipements sont: ");
+			for( Equipement : Equipement.values()) {
+				System.out.println("-" + equipement);
+			}
+		}
+		
 	}
 
 	@Override
@@ -47,6 +54,7 @@ public class Romain {
 		mercurius = new Romain("Mercurius",6);
 		mercurius.parler("me frappe pas!");
 		mercurius.recevoirCoup(3);
+		
 		
 	}
 	
