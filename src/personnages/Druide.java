@@ -1,5 +1,11 @@
 package personnages;
 
+
+import java.security.DrbgParameters.NextBytes;
+import java.util.Random;
+import java.util.random.RandomGenerator;
+
+
 public class Druide {
 	private String nom;
 	private int effetPotionMin;
@@ -22,5 +28,22 @@ public class Druide {
 	private String prendreParole() {
 		return "Le druide" + nom + ":";
 	}
+	
+	
+	public int preparerPotion() {
+		//int forcePotion;
+		Random forcePotion;
+		forcePotion= new Random;
+		next
+		
+		
+	}
+
+	private void Random() {
+		
+		
+	}
+	
+	
 }
 
