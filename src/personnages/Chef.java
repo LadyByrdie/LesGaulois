@@ -1,5 +1,5 @@
 package personnages;
-
+import personnages.Romain;
 public class Chef {
 	private String nom;
 	private int force;

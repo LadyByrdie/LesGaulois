@@ -3,19 +3,9 @@ package personnages;
 public class Romain {
 	private String nom;
 	private int force;
-	private Equipement[][] equipement; 
+	private Equipement[] equipement; 
 	private int nbEquipement = 0;
-	private enum Equipement{CASQUE("casque"), BOUCLIER("bouclier");
-		private String nom;
-		
-		private Equipement(String nom) {
-			this.nom = nom;
-		}
-		
-		public String toString() {
-			return nom;
-		}
-	};
+	private enum Equipement;
 	
 	public void equipement() {
 		System.out.println("Les équipement disponibles: ");

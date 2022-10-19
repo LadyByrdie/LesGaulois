@@ -1,9 +1,6 @@
 package personnages;
 
-
-import java.security.DrbgParameters.NextBytes;
 import java.util.Random;
-import java.util.random.RandomGenerator;
 
 
 public class Druide {
@@ -30,20 +27,29 @@ public class Druide {
 	}
 	
 	
-	public int preparerPotion() {
-		//int forcePotion;
-		Random forcePotion;
-		forcePotion= new Random;
-		next
+	public void preparerPotion() {
+		int newForce;
+		Random forcePotion= new Random();
+		newForce= forcePotion.nextInt(effetPotionMax);
+		while (newForce<effetPotionMin) {
+			newForce= forcePotion.nextInt(effetPotionMax);
+		}
+		if (newForce>7) {
+			System.out.println(prendreParole()+"J'ai préparé une super potion de force "+newForce );
+			
+		} else {
+			System.out.println(prendreParole()+"Je n'ai pas trouvé tous les ingrédients, ma potion et seumen de force "+newForce);
+		}
+		}
 		
-		
-	}
+	
 
-	private void Random() {
-		
-		
-	}
-	
-	
+public void main(String[] args) {
+	Druide panoramix;
+	Druide panomarix= new Druide("Panomarix", 5, 10);
+	panomarix.preparerPotion();
 }
+}
+
+
 
