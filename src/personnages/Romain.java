@@ -3,9 +3,8 @@ package personnages;
 public class Romain {
 	private String nom;
 	private int force;
-	private Equipement[] equipement; 
+	private Equipement[] equipements; 
 	private int nbEquipement = 0;
-	private enum Equipement;
 	
 	public void equipement() {
 		System.out.println("Les équipement disponibles: ");
@@ -14,6 +13,26 @@ public class Romain {
 		}
 	}
 
+	public void sEquiper(Equipement equipement) {
+        switch (this.nbEquipement) {
+        case 2: {
+            System.out.println("Le soldat " + this.nom + " est bien équiper");
+            break;
+        }
+        case 1: {
+            if (this.equipements[0] == equipement) {
+                System.out.println("Le soldat " + this.nom + " possède déjà un " + equipement);
+                break;
+            }
+        }
+        default:
+            this.equipements[this.nbEquipement] = equipement;
+            this.nbEquipement += 1;
+            System.out.println("Le soldat " + this.nom + " s'équipe d'un " + equipement);
+            break;
+        }
+    }
+	
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
@@ -45,15 +64,7 @@ public class Romain {
 		}
 	}
 	
-	public void sEquiper(Equipement[]porter) {
-		if(nbEquipement == 2) {
-			System.out.println("Le soldat "+nom+ "est déjà bien protégé!")
-		}if (nbEquipement == 1) {
-			
-			
-		}
-	}
-	
+
 		@Override
 	public String toString() {
 		return "Romain [nom=" + nom + ", force=" + force + "]";
@@ -62,11 +73,8 @@ public class Romain {
 	public static void main(String[] arg) {
 		Romain mercurius;
 		mercurius = new Romain("Mercurius",6);
-		mercurius.equipement();
 		mercurius.parler("me frappe pas!");
-		mercurius.recevoirCoup(3);
-		
-		
+		mercurius.recevoirCoup(3);		
 	}
 	
 }

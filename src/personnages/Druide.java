@@ -7,12 +7,14 @@ public class Druide {
 	private String nom;
 	private int effetPotionMin;
 	private int effetPotionMax;
+	private int newPotion = 1;
+	
 	
 	public Druide(String nom, int effetPotionMin, int effetPotionMax) {
 		this.nom = nom;
 		this.effetPotionMin = effetPotionMin;
 		this.effetPotionMax = effetPotionMax;
-		parler("Bonjour, je suis le druide" + nom + "et ma potion peut aller d'une force" + effetPotionMin + "à"
+		parler("Bonjour, je suis le druide " + nom + "et ma potion peut aller d'une force " + effetPotionMin + " à "
 				+effetPotionMax + ".");
 	}
 
@@ -28,26 +30,37 @@ public class Druide {
 	
 	
 	public void preparerPotion() {
-		int newForce;
 		Random forcePotion= new Random();
-		newForce= forcePotion.nextInt(effetPotionMax);
-		while (newForce<effetPotionMin) {
-			newForce= forcePotion.nextInt(effetPotionMax);
+		newPotion= forcePotion.nextInt(effetPotionMax);
+		while (newPotion<effetPotionMin) {
+			newPotion= forcePotion.nextInt(effetPotionMax);
 		}
-		if (newForce>7) {
-			System.out.println(prendreParole()+"J'ai préparé une super potion de force "+newForce );
+		if (newPotion>7) {
+			System.out.println(prendreParole()+"J'ai préparé une super potion de force "+newPotion);
 			
 		} else {
-			System.out.println(prendreParole()+"Je n'ai pas trouvé tous les ingrédients, ma potion et seumen de force "+newForce);
+			System.out.println(prendreParole()+"Je n'ai pas trouvé tous les ingrédients, ma potion et seulment de force "+newPotion);
+			}
 		}
+	
+	public void booster(Gaulois person){
+		String nomGaulois = person.getNom();
+		if("Obelix".equals(nomGaulois)) {
+			parler("Non, Obelix! ... Tu n'auras pas de potion magique!");
+		}else {
+			preparerPotion();
+			person.boirePotion(newPotion);
 		}
+	}
+		
 		
 	
 
-public void main(String[] args) {
-	Druide panoramix;
+public static void main(String[] args) {
+	Gaulois asterix;
+	asterix = new Gaulois("Astérix", 8);
 	Druide panomarix= new Druide("Panomarix", 5, 10);
-	panomarix.preparerPotion();
+	panomarix.booster(asterix);
 }
 }
 
