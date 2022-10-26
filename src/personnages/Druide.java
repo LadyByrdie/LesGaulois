@@ -32,7 +32,7 @@ public class Druide {
 	public void preparerPotion() {
 		Random forcePotion= new Random();
 		newPotion= forcePotion.nextInt(effetPotionMax);
-		while (newPotion<effetPotionMin) {
+		while (newPotion<effetPotionMin-1) {
 			newPotion= forcePotion.nextInt(effetPotionMax);
 		}
 		if (newPotion>7) {
@@ -45,8 +45,8 @@ public class Druide {
 	
 	public void booster(Gaulois person){
 		String nomGaulois = person.getNom();
-		if("Obelix".equals(nomGaulois)) {
-			parler("Non, Obelix! ... Tu n'auras pas de potion magique!");
+		if("Obélix".equals(nomGaulois)) {
+			parler("Non, Obélix! ... Tu n'auras pas de potion magique!");
 		}else {
 			preparerPotion();
 			person.boirePotion(newPotion);
